@@ -39,8 +39,18 @@ public class MealServiceImpl implements MealService {
 
 	@Override
 	public Meal update(int id, Meal meal) {
-		repo.flush();
-		return null;
+		Meal mealToUpdate = null;
+		Optional<Meal>opt = repo.findById(id);
+		if (opt.isPresent()) {
+			mealToUpdate = opt.get();
+			mealToUpdate.setName(meal.getName());
+			mealToUpdate.setFoods(meal.getFoods());
+			mealToUpdate.setCalories(meal.getCalories());
+			mealToUpdate.setCost(meal.getCost());
+			repo.saveAndFlush(mealToUpdate);
+		}
+		return mealToUpdate;
+		
 	}
 
 	@Override
