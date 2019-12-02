@@ -8,10 +8,16 @@ RESTful web service allows a client to retrieve and manage resources stored on a
 Spring JPA
 
 Postman to test RESTful APIs
+listall - GET - http://localhost:8082/api/meal
+searchById - GET - http://localhost:8082/api/meal/(id)
+create - POST - http://localhost:8082/api/meal
+update - PUT - http://localhost:8082/api/meal/(id)
+delete - DELETE - http://localhost:8082/api/meal/(id)
+
 
 ##Lessons Learned
 Packages root need to be named the same in the boot and JPA folders.
 
 remember to change to JSON instead to text in Postman otherwise you get input error.
 
-Really important to have the right build.gradle, settings.gradle and applications.properties otherwise you'll just keep copy pasting the broken code throughout each new project. 
+Really important to have the right build.gradle, settings.gradle and applications.properties otherwise you'll just keep copy pasting the broken code throughout each new project.
