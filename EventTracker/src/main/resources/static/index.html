@@ -4,10 +4,36 @@
 <meta charset="UTF-8">
 <title>Event Tracker</title>
 
-<script> type="text/javascript" src="js/script.js" </script>
+<script type="text/javascript" src="js/script.js" ></script>
 </head>
 <body>
 	<h1>Event Tracker</h1>
 	
+	<form name = 'form'>
+	Search By Meal Id:
+	<input type = 'number' name = 'mealId'>
+	<button name = 'submit'> Submit</button>
+	</form>
+	<br>
+	
+	<div id ="output">
+		<div id ="mealData"></div>
+		<form name="editMeal"></form>
+	</div>
+	
+	<br>
+	Add Meal:
+	<form name="addMealForm">
+		<input type="text" name='Name' placeholder="(Breakfast)">
+		<input type="text" name='Foods' placeholder="(pancakes)">
+		<input type="number" name='Calories' placeholder="calories">
+		<input type="number" name='Cost' placeholder="cost">
+		<button name = 'create'> Submit</button>
+	</form>
+	<br>
+	<form name= 'allMeals'>
+	
+	</form>	
+		
 </body>
 </html>
