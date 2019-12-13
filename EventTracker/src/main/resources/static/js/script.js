@@ -25,12 +25,14 @@ function init() {
 	
 //	 Create button function listener
 	document.addMealForm.create.addEventListener('click',function(e) {
+		console.log('create button clicked')
 		e.preventDefault();
 		addNewMeal();
 	});
 	
 }
 function addNewMeal() {
+	console.log("adding new film");
 	var xhr = new XMLHttpRequest();
 	xhr.open('POST', '/api/meal/', true);
 	xhr.setRequestHeader("Content-type", "application/json");
@@ -44,14 +46,14 @@ function addNewMeal() {
 		}
 	};
 
-	let form = documuent.addMealForm;
 	var mealObject = {
-			
 			name: form.name.value,
 			foods: form.foods.value,
 			calories: form.calories.value,
 			cost: form.cost.value
 	};
+	var form = documuent.addMealForm
+	
 	//Convert JS object to JSON string
 	var mealObjectJson = JSON.stringify(mealObject); 
 	xhr.send(mealObjectJson);
@@ -118,15 +120,6 @@ function displayMeals(meals) {
 		tableRow.appendChild(tableData3);
 	}
 			
-//	let mealsDiv = document.getElementById("meals");
-//	let ul = document.createElement("ul");
-//	for (let i =0; i < meals.length; i ++) {
-//		let li = document.createElement('li');
-//		let e = meals[i];
-//		li.textContent = e.id + " " + e.name;
-//		ul.appendChild(li);
-//	}
-//	mealsDiv.appendChild(ul);
 }
 function displayMeal(meal) {
 	var dataDiv = document.getElementById('mealData')
@@ -212,7 +205,7 @@ function updateMeal(meal, id) {
 	console.log(meal);
 	var xhr = new XMLHttpRequest();
 	
-	xhr.open('PUT', 'api/meal/' + mealId, true)
+	xhr.open('PUT', 'api/meal/' + id, true)
 	xhr.setRequestHeader("Content-type", "application/json")
 	xhr.onreadystatechange = function() {
 		
