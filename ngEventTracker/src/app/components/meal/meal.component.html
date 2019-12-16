@@ -8,7 +8,7 @@
         <input type="text" name="foods" [(ngModel)]="newMeal.foods" placeholder="Foods"><br>
         <input type="number" name="calories" [(ngModel)]="newMeal.calories" placeholder="Calories"><br>
         <input type="number" name="cost" [(ngModel)]="newMeal.cost" placeholder="Cost"><br>
-        <input type="submit" value="createNewMeal" (click)="addMeal()">
+        <input type="submit" value="create" (click)="addMeal()">
       </form>
       <br>
     </div>
@@ -16,16 +16,6 @@
   <span class="badge badge-primary" [ngClass]="badgeColor() ">
     {{countMeals()}}
   </span>
-  <div id="createNewMeal">
-      <form>
-        <!-- <input type="number" name="id" [(ngModel)]="newMeal.id" placeholder="id"><br> -->
-        <input type="text" name="name" [(ngModel)]="newMeal.name" placeholder="Name"><br>
-        <input type="text" name="foods" [(ngModel)]="newMeal.foods" placeholder="Foods"><br>
-        <input type="number" name="calories" [(ngModel)]="newMeal.calories" placeholder="Calories"><br>
-        <input type="number" name="cost" [(ngModel)]="newMeal.cost" placeholder="Cost"><br>
-        <input type="submit" value="create" (click)="addMeal()">
-      </form>
-    </div>
     <br>
   <!-- List all meals -->
   <div id="mealList" *ngIf= "!selectedMeal">
@@ -60,7 +50,6 @@
         <td (click)="deleteMeal(selectedMeal.id)"> <button> Delete </button> </td>
       </ul>
       <!-- <button (click) = "selectedMeal = null">Back</button> -->
-
 
           <h2>Edit Meal # {{selectedMeal.id}}</h2>
           <form>
