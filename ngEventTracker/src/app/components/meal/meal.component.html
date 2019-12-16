@@ -1,6 +1,18 @@
-<p>meal works!</p>
+<!-- <p>meal works!</p> -->
 <h1>
-  {{title}} Total Number of Meals
+  Add a Meal
+  <div id="createNewMeal">
+      <form>
+        <!-- <input type="number" name="id" [(ngModel)]="newMeal.id" placeholder="id"><br> -->
+        <input type="text" name="name" [(ngModel)]="newMeal.name" placeholder="Name"><br>
+        <input type="text" name="foods" [(ngModel)]="newMeal.foods" placeholder="Foods"><br>
+        <input type="number" name="calories" [(ngModel)]="newMeal.calories" placeholder="Calories"><br>
+        <input type="number" name="cost" [(ngModel)]="newMeal.cost" placeholder="Cost"><br>
+        <input type="submit" value="createNewMeal" (click)="addMeal()">
+      </form>
+      <br>
+    </div>
+    Total Number of Meals
   <span class="badge badge-primary" [ngClass]="badgeColor() ">
     {{countMeals()}}
   </span>
@@ -11,10 +23,10 @@
         <input type="text" name="foods" [(ngModel)]="newMeal.foods" placeholder="Foods"><br>
         <input type="number" name="calories" [(ngModel)]="newMeal.calories" placeholder="Calories"><br>
         <input type="number" name="cost" [(ngModel)]="newMeal.cost" placeholder="Cost"><br>
-        <input type="submit" value="createNewMeal" (click)="addMeal()">
+        <input type="submit" value="create" (click)="addMeal()">
       </form>
     </div>
-
+    <br>
   <!-- List all meals -->
   <div id="mealList" *ngIf= "!selectedMeal">
     <table class="table table-striped table-hover">
