@@ -58,13 +58,8 @@ export class MealComponent implements OnInit {
   //     }
   //   );
   // }
-
-  numberOfMeals() {
-
-  }
-
   badgeColor(): string {
-    const incompleteTodoCount = this.numberOfMeals();
+    // const incompleteTodoCount = this.numberOfMeals();
     // if (this.numberOfMeals >= 10) {
     //   return 'badge-danger';
     // }
@@ -112,7 +107,7 @@ export class MealComponent implements OnInit {
         }
     );
   }
-   reload() {
+  reload() {
     this.mealService.index().subscribe(
       (aGoodThingHappened) => {
         console.log(aGoodThingHappened);
@@ -123,5 +118,8 @@ export class MealComponent implements OnInit {
         console.log(didntWork);
       }
     );
+  }
+  countMeals() {
+    return this.meals.length;
   }
 }

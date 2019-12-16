@@ -14,6 +14,8 @@ create - POST - http://localhost:8082/api/meal
 update - PUT - http://localhost:8082/api/meal/(id)
 delete - DELETE - http://localhost:8082/api/meal/(id)
 
+An Angular front end was added to display the database data in http.
+
 
 ## Lessons Learned
 Packages root need to be named the same in the boot and JPA folders.
