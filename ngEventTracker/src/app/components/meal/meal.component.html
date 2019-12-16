@@ -39,7 +39,7 @@
   </div>
   <div *ngIf="selectedMeal">
       <ul>
-        <li> {{ selectedMeal | json }} </li>
+        <!-- <li> {{ selectedMeal | json }} </li> -->
         <li>Id: {{ selectedMeal.id }}</li>
         <li>Name: {{ selectedMeal.name | uppercase }}</li>
         <li>Foods: {{ selectedMeal.foods }}</li>
@@ -50,13 +50,13 @@
       <!-- <button (click) = "selectedMeal = null">Back</button> -->
 
 
-          <h2>Edit {{selectedMeal.id}}</h2>
+          <h2>Edit Meal # {{selectedMeal.id}}</h2>
           <form>
 
-            <input type = "text" name = "name" [(ngModel)]="selectedMeal.name"> <br>
-            <input type="text" name= "foods" [(ngModel)]="selectedMeal.foods" >
-            <input type="text" name="calories" [(ngModel)]="selectedMeal.calories" >
-            <input type="text" name="cost" [(ngModel)]="selectedMeal.cost" >
+            Name: <input type = "text" name = "name" [(ngModel)]="selectedMeal.name"> <br>
+            Foods: <input type="text" name= "foods" [(ngModel)]="selectedMeal.foods" > <br>
+            Calories: <input type="text" name="calories" [(ngModel)]="selectedMeal.calories" ><br>
+            Cost: <input type="text" name="cost" [(ngModel)]="selectedMeal.cost" > <br>
             <button (click)="updateMeal()">Save</button>
             <button (click)="selectedMeal = null">Cancel</button>
           </form>
